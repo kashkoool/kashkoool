@@ -1,16 +1,3 @@
-<!--
-Credits and references used in this README:
-
-1) Layout ideas and section inspiration:
-   https://github.com/abhisheknaiidu/awesome-github-profile-readme?tab=readme-ov-file#descriptive-
-
-2) Skill icons (SVG badges):
-   https://github.com/tandpfun/skill-icons?tab=readme-ov-file#icons-list
-
-3) GitHub stats card:
-   https://github.com/anuraghazra/github-readme-stats
--->
-
 # 🚀 Louay Kashkool  
 **`Software Engineer | Startup Builder | Full Stack Developer AI Focused`**  
 
@@ -21,9 +8,21 @@ Credits and references used in this README:
 ---
 
 ## About Me  
-- Passionate about building SaaS and innovative apps.  
-- Focused on creating tools that help businesses grow.  
-- Exploring AI, cloud, and scalable systems.  
+Hi there! I'm Louay Kashkool, a Software Engineer, CEO & IT Consultant, and AI Adoption Specialist based in Doha, Qatar. I enjoy building scalable web applications, integrating AI-driven tools, and developing automation scripts that improve efficiency.  
+
+I have experience delivering 10+ web and software projects on time, including:  
+- AI-integrated PWAs for stroke patients with responsive UI and secure backend APIs  
+- Multi-vendor e-commerce platforms and Cold Store Management Systems  
+- Audio Libraries and other automation-driven client systems  
+
+Some of my core achievements:  
+- Reduced delivery time by up to 50% using AI adoption and process automation  
+- Optimized database queries and backend systems, boosting performance and reliability  
+- Mentored teams of developers, delivering client solutions with 95% satisfaction  
+
+I love combining my hobbies with work, such as 3D printing, coding, Raspberry Pi and Arduino projects, and exploring home automation and AI applications.  
+
+You can reach me via email, LinkedIn, or check out my portfolio and projects to learn more about my work.
 
 ---
 

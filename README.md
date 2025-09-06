@@ -12,12 +12,11 @@ Credits and references used in this README:
 -->
 
 # 🚀 Louay Kashkool  
-**`Software Engineer | Startup Builder | Full Stack Developer AI focused`**  
+**`Software Engineer | Startup Builder | Full Stack Developer AI Focused`**  
+
 <p align="center">
   <img src="0906.gif" alt="Hi, I'm Louay - welcome!" width="100%"/>
 </p>
-
-
 
 ---
 
@@ -51,7 +50,7 @@ Credits and references used in this README:
     </td>
     <td align="center" width="50%">
       <a href="https://nizargold.vercel.app">
-        <img src="Screenshot 2025-09-06 175526.pngtext=Gold+Store+App"
+        <img src="Screenshot 2025-09-06 175526.png"
              alt="Gold Store App"
              style="width:100%; height:200px; object-fit:cover;"/>
       </a>
@@ -73,7 +72,7 @@ Credits and references used in this README:
 ## Links  
 - [**Portfolio**](https://louaykashkool-portfolio.vercel.app/)  
 - [**Gold Store App**](https://nizargold.vercel.app)  
-- [**Contact**](Loaekashkoool@gmail.com)  
+- [**Contact**](mailto:Loaekashkoool@gmail.com)  
 
 <a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">
   <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />

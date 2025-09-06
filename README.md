@@ -40,18 +40,17 @@ Credits and references used in this README:
 <table>
   <tr>
     <td align="center" width="50%">
-      <a href="https://yourportfolio.com">
-        <img src="https://via.placeholder.com/600x200.png?text=Portfolio+Preview"
-             alt="Portfolio"
-             style="width:100%; height:200px; object-fit:cover;"/>
+      <a href="https://louaykashkool-portfolio.vercel.app/">
+        <img src="https://skillicons.dev/icons?i=figma" alt="Portfolio Icon"
+             style="width:80px; height:80px; margin-bottom:10px;"/>
       </a>
       <br/>
       <b>Portfolio Website</b><br/>
       <sub>My personal portfolio showcasing projects and experience.</sub><br/>
-      🔗 <a href="https://yourportfolio.com">Live Site</a>
+      🔗 <a href="https://louaykashkool-portfolio.vercel.app/">Live Site</a>
     </td>
     <td align="center" width="50%">
-      <a href="https://yourgoldstoreapp.com">
+      <a href="https://nizargold.vercel.app">
         <img src="https://via.placeholder.com/600x200.png?text=Gold+Store+App"
              alt="Gold Store App"
              style="width:100%; height:200px; object-fit:cover;"/>
@@ -59,7 +58,7 @@ Credits and references used in this README:
       <br/>
       <b>Gold Store Web App</b><br/>
       <sub>A modern store platform for managing and browsing gold products.</sub><br/>
-      🔗 <a href="https://yourgoldstoreapp.com">Live App</a>
+      🔗 <a href="https://nizargold.vercel.app">Live App</a>
     </td>
   </tr>
 </table>
@@ -72,10 +71,16 @@ Credits and references used in this README:
 ---
 
 ## Links  
-- [**Portfolio**](https://yourportfolio.com)  
-- [**Gold Store App**](https://yourgoldstoreapp.com)  
+- [**Portfolio**](https://louaykashkool-portfolio.vercel.app/)  
+- [**Gold Store App**](https://nizargold.vercel.app)  
 - [**Contact**](mailto:yourmail@example.com)  
 
+<a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">
+  <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
+</a>
+<a href="https://www.instagram.com/l.k_2910/" target="blank">
+  <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram" />
+</a>
 <a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">
   <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
 </a>

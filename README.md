@@ -10,17 +10,10 @@
 ## About Me  
 Hi there! I'm Louay Kashkool, a Software Engineer, CEO & IT Consultant, and AI Adoption Specialist based in Doha, Qatar. I enjoy building scalable web applications, integrating AI-driven tools, and developing automation scripts that improve efficiency.  
 
-I have experience delivering 10+ web and software projects on time, including:  
-- AI-integrated PWAs for stroke patients with responsive UI and secure backend APIs  
-- Multi-vendor e-commerce platforms and Cold Store Management Systems  
-- Audio Libraries and other automation-driven client systems  
-
 Some of my core achievements:  
 - Reduced delivery time by up to 50% using AI adoption and process automation  
 - Optimized database queries and backend systems, boosting performance and reliability  
 - Mentored teams of developers, delivering client solutions with 95% satisfaction  
-
-I love combining my hobbies with work, such as 3D printing, coding, Raspberry Pi and Arduino projects, and exploring home automation and AI applications.  
 
 You can reach me via email, LinkedIn, or check out my portfolio and projects to learn more about my work.
 

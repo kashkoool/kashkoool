@@ -13,11 +13,8 @@ Credits and references used in this README:
 
 # 🚀 Louay Kashkool  
 
-<!-- Video/GIF intro (replace with the GitHub-hosted file or external link to your short Wan 2.2 video) -->
 <p align="center">
-  <a href="https://github.com/yourusername/yourrepo">
-    <img src="video-preview.gif" alt="Hi, I'm Louay - welcome!" width="100%"/>
-  </a>
+  <img src="0906.gif" alt="Hi, I'm Louay - welcome!" width="100%"/>
 </p>
 
 **`Software Engineer | Startup Builder`**  
@@ -70,7 +67,7 @@ Credits and references used in this README:
 ---
 
 ## Stats  
-![Louay's GitHub stats](https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=gruvbox)  
+![Louay's GitHub stats](https://github-readme-stats.vercel.app/api?username=kashkoool&show_icons=true&theme=gruvbox)  
 
 ---
 

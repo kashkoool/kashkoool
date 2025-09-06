@@ -29,7 +29,7 @@ Credits and references used in this README:
 ---
 
 ## Skill Stack  
-[![My Skills](https://skillicons.dev/icons?i=react,nodejs,python,mongodb,aws,docker,git,github,figma&theme=light)](https://skillicons.dev)  
+[![My Skills](https://skillicons.dev/icons?i=react,nodejs,c,cs,cpp,js,python,mongodb,aws,docker,git,github,figma&theme=light)](https://skillicons.dev)  
 
 **Also comfortable with**: SQL (Postgres), CI/CD pipelines, Networking & Security, Basic ML workflows.  
 
@@ -41,7 +41,7 @@ Credits and references used in this README:
   <tr>
     <td align="center" width="50%">
       <a href="https://louaykashkool-portfolio.vercel.app/">
-        <img src="https://skillicons.dev/icons?i=figma" alt="Portfolio Icon"
+        <img src="https://skillicons.dev/icons?i=threejs" alt="Portfolio Icon"
              style="width:80px; height:80px; margin-bottom:10px;"/>
       </a>
       <br/>
@@ -73,14 +73,8 @@ Credits and references used in this README:
 ## Links  
 - [**Portfolio**](https://louaykashkool-portfolio.vercel.app/)  
 - [**Gold Store App**](https://nizargold.vercel.app)  
-- [**Contact**](mailto:yourmail@example.com)  
+- [**Contact**](Loaekashkoool@gmail.com)  
 
-<a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">
-  <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
-</a>
-<a href="https://www.instagram.com/l.k_2910/" target="blank">
-  <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram" />
-</a>
 <a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">
   <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
 </a>

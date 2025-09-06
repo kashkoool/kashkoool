@@ -51,7 +51,7 @@ Credits and references used in this README:
     </td>
     <td align="center" width="50%">
       <a href="https://nizargold.vercel.app">
-        <img src="https://via.placeholder.com/600x200.png?text=Gold+Store+App"
+        <img src="Screenshot 2025-09-06 175526.pngtext=Gold+Store+App"
              alt="Gold Store App"
              style="width:100%; height:200px; object-fit:cover;"/>
       </a>

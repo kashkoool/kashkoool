@@ -12,12 +12,12 @@ Credits and references used in this README:
 -->
 
 # 🚀 Louay Kashkool  
-
+**`Software Engineer | Startup Builder | Full Stack Developer AI focused`**  
 <p align="center">
   <img src="0906.gif" alt="Hi, I'm Louay - welcome!" width="100%"/>
 </p>
 
-**`Software Engineer | Startup Builder`**  
+
 
 ---
 

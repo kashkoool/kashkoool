@@ -65,7 +65,7 @@ Credits and references used in this README:
 ---
 
 ## Stats  
-![Louay's GitHub stats](https://github-readme-stats.vercel.app/api?username=kashkoool&show_icons=true&theme=gruvbox)  
+![Louay's GitHub stats](https://github-readme-stats.vercel.app/api?username=kashkoool&show_icons=true&theme=radical&bg_color=00000000)  
 
 ---
 

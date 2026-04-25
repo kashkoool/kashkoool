@@ -49,7 +49,7 @@ You can reach me via email, LinkedIn, or check out my portfolio and projects to 
       <br/>
       <b>Gold Store Web App</b><br/>
       <sub>A modern store platform for managing and browsing gold products.</sub><br/>
-      🔗 <a href="https://yamanjewelery.com/">Live App</a>
+      🔗 <a href="https://nizarjewellery.com/">Live App</a>
     </td>
   </tr>
 </table>
@@ -63,7 +63,7 @@ You can reach me via email, LinkedIn, or check out my portfolio and projects to 
 
 ## Links  
 - [**Portfolio**](https://louaykashkool-portfolio.vercel.app/)  
-- [**Gold Store App**](https://yamanjewelery.com/)  
+- [**Gold Store App**](https://nizarjewellery.com/)  
 - [**Contact**](mailto:Loaekashkoool@gmail.com)  
 
 <a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">

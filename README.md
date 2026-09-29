@@ -1,40 +1,86 @@
-# Louay Kashkool
+# 🚀 Louay Kashkool  
+**`Full-Stack Software Engineer | DevOps & Cloud Security`**  
 
-**Software Engineer · Cloud, DevOps & Security** · Doha, Qatar
-
-I build and run production web systems end to end: database design, backend, frontend, AWS infrastructure, CI/CD and security hardening.
-
-I work AI-assisted (Claude Code, Cursor). I own the architecture, the review and the verification of every change, and I treat AI-generated code as untrusted until it is tested.
-
-Currently: AWS Solutions Architect Associate · Terraform · Python · German (B1 → B2).
+<p align="center">
+  <img src="0906.gif" alt="Hi, I'm Louay - welcome!" width="100%"/>
+</p>
 
 ---
 
-## Featured: Jadwal — [jadwal.qa](https://jadwal.qa)
+## About Me  
+Hi there! I'm Louay Kashkool, a Full-Stack Software Engineer based in Doha, Qatar. I build and run production web applications end to end: architecture, backend, frontend, AWS infrastructure, CI/CD and security.  
 
-A multi-country GCC event-booking marketplace (Qatar, KSA, UAE, Bahrain, Oman, Kuwait). I am the founding and sole engineer.
-**Source:** [github.com/jadwalit-jpg/Jadwal](https://github.com/jadwalit-jpg/Jadwal)
+Some of my core achievements:  
+- Built and run [jadwal.qa](https://jadwal.qa), a GCC event-booking marketplace live in 6 countries, as its founding engineer  
+- Own its AWS production setup (ECS Fargate, RDS, CloudFront) with zero-downtime deploys and automatic rollback  
+- Hardened CI/CD with OIDC-based AWS deploys and Semgrep, CodeQL, Gitleaks and Trivy scans on every merge, backed by 2,300+ automated tests  
+- Root-caused and fixed a broken signature check in a payment provider's callback that was silently failing every transaction  
 
-- **Stack:** NestJS, Next.js, TypeScript, PostgreSQL + Prisma, Redis, Turborepo
-- **AWS:** ECS Fargate, RDS, CloudFront; zero-downtime deploys with automatic rollback
-- **CI/CD:** 12 GitHub Actions workflows with every action pinned to a commit SHA; AWS deploys over OIDC (no long-lived keys); separate migrations image
-- **Security scanning:** Semgrep, CodeQL, Gitleaks, Trivy (container images), OpenSSF Scorecard, dependency review
-- **Tests:** 2,300+ automated tests (Jest, Supertest, Playwright E2E), plus k6 load tests
-- **Payments:** found and fixed a broken signature recipe in the payment provider's server-to-server callback; hardened it against duplicate captures and forged requests
+You can reach me via email, LinkedIn, or check out my portfolio and projects to learn more about my work.
 
-## Other work
+---
 
-| Project | What it is |
-|---|---|
-| [StrokeAssist](https://strokeapp.vercel.app) · [repo](https://github.com/kashkoool/strokeapp) | Accessibility PWA that lets a non-verbal stroke patient communicate with icons; works offline, used by a real client |
-| [data-engineering-assessment](https://github.com/kashkoool/data-engineering-assessment) | Python ETL pipeline into SQLite with a Power BI report |
+## Skill Stack  
+[![My Skills](https://skillicons.dev/icons?i=ts,js,python,nodejs,nestjs,nextjs,react,postgres,prisma,redis,mongodb,aws,docker,githubactions,cloudflare,git&theme=light)](https://skillicons.dev)  
 
-## Stack
+**Also comfortable with**: SQL (Postgres), CI/CD pipelines, Networking & Security, Basic ML workflows.  
 
-**Languages:** TypeScript, JavaScript, Python · **Backend:** NestJS, Express, Prisma · **Frontend:** Next.js, React, Tailwind
-**Cloud & DevOps:** AWS (ECS Fargate, RDS, ElastiCache, CloudFront, S3, IAM, SES), Docker, GitHub Actions, Cloudflare
-**Security:** OIDC, CSP/HSTS, HMAC-signed tokens, rate limiting, audit logging, DMARC/SPF/DKIM, SAST and container scanning
+---
 
-## Contact
+## Projects – Showcase  
 
-[Portfolio](https://louaykashkool-portfolio.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/louay-kashkool-52a45b313/) · Loaekashkoool@gmail.com
+<table>
+  <tr>
+    <td align="center" colspan="2">
+      <a href="https://jadwal.qa">
+        <img src="https://skillicons.dev/icons?i=nestjs,nextjs,aws" alt="Jadwal stack"/>
+      </a>
+      <br/>
+      <b>Jadwal — GCC Event-Booking Marketplace</b><br/>
+      <sub>Live in Qatar, KSA, UAE, Bahrain, Oman and Kuwait. NestJS · Next.js · PostgreSQL · AWS ECS Fargate · 2,300+ tests.</sub><br/>
+      🔗 <a href="https://jadwal.qa">Live Site</a> · <a href="https://github.com/jadwalit-jpg/Jadwal">Source</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://louaykashkool-portfolio.vercel.app/">
+        <img src="https://skillicons.dev/icons?i=threejs" alt="Portfolio Icon"
+             style="width:80px; height:80px; margin-bottom:10px;"/>
+      </a>
+      <br/>
+      <b>Portfolio Website</b><br/>
+      <sub>My personal portfolio showcasing projects and experience.</sub><br/>
+      🔗 <a href="https://louaykashkool-portfolio.vercel.app/">Live Site</a>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://nizargold.vercel.app">
+        <img src="Screenshot 2025-09-06 175526.png"
+             alt="Gold Store App"
+             style="width:100%; height:200px; object-fit:cover;"/>
+      </a>
+      <br/>
+      <b>Gold Store Web App</b><br/>
+      <sub>A modern store platform for managing and browsing gold products.</sub><br/>
+      🔗 <a href="https://nizarjewellery.com/">Live App</a>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Stats  
+![Louay's GitHub stats](https://github-readme-stats.vercel.app/api?username=kashkoool&show_icons=true&theme=radical&bg_color=00000000)  
+
+---
+
+## Links  
+- [**Portfolio**](https://louaykashkool-portfolio.vercel.app/)  
+- [**Gold Store App**](https://nizarjewellery.com/)  
+- [**Contact**](mailto:Loaekashkoool@gmail.com)  
+
+<a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">
+  <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
+</a>
+<a href="https://www.instagram.com/l.k_2910/" target="blank">
+  <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram" />
+</a>

@@ -1,74 +1,40 @@
-# 🚀 Louay Kashkool  
-**`Software Engineer | Startup Builder | Full Stack Developer AI Focused`**  
+# Louay Kashkool
 
-<p align="center">
-  <img src="0906.gif" alt="Hi, I'm Louay - welcome!" width="100%"/>
-</p>
+**Software Engineer · Cloud, DevOps & Security** · Doha, Qatar
 
----
+I build and run production web systems end to end: database design, backend, frontend, AWS infrastructure, CI/CD and security hardening.
 
-## About Me  
-Hi there! I'm Louay Kashkool, a Software Engineer, CEO & IT Consultant, and AI Adoption Specialist based in Doha, Qatar. I enjoy building scalable web applications, integrating AI-driven tools, and developing automation scripts that improve efficiency.  
+I work AI-assisted (Claude Code, Cursor). I own the architecture, the review and the verification of every change, and I treat AI-generated code as untrusted until it is tested.
 
-Some of my core achievements:  
-- Reduced delivery time by up to 50% using AI adoption and process automation  
-- Optimized database queries and backend systems, boosting performance and reliability  
-- Mentored teams of developers, delivering client solutions with 95% satisfaction  
-
-You can reach me via email, LinkedIn, or check out my portfolio and projects to learn more about my work.
+Currently: AWS Solutions Architect Associate · Terraform · Python · German (B1 → B2).
 
 ---
 
-## Skill Stack  
-[![My Skills](https://skillicons.dev/icons?i=react,nodejs,c,cs,cpp,js,python,mongodb,aws,docker,git,github,figma&theme=light)](https://skillicons.dev)  
+## Featured: Jadwal — [jadwal.qa](https://jadwal.qa)
 
-**Also comfortable with**: SQL (Postgres), CI/CD pipelines, Networking & Security, Basic ML workflows.  
+A multi-country GCC event-booking marketplace (Qatar, KSA, UAE, Bahrain, Oman, Kuwait). I am the founding and sole engineer.
+**Source:** [github.com/jadwalit-jpg/Jadwal](https://github.com/jadwalit-jpg/Jadwal)
 
----
+- **Stack:** NestJS, Next.js, TypeScript, PostgreSQL + Prisma, Redis, Turborepo
+- **AWS:** ECS Fargate, RDS, CloudFront; zero-downtime deploys with automatic rollback
+- **CI/CD:** 12 GitHub Actions workflows with every action pinned to a commit SHA; AWS deploys over OIDC (no long-lived keys); separate migrations image
+- **Security scanning:** Semgrep, CodeQL, Gitleaks, Trivy (container images), OpenSSF Scorecard, dependency review
+- **Tests:** 2,300+ automated tests (Jest, Supertest, Playwright E2E), plus k6 load tests
+- **Payments:** found and fixed a broken signature recipe in the payment provider's server-to-server callback; hardened it against duplicate captures and forged requests
 
-## Projects – Showcase  
+## Other work
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <a href="https://louaykashkool-portfolio.vercel.app/">
-        <img src="https://skillicons.dev/icons?i=threejs" alt="Portfolio Icon"
-             style="width:80px; height:80px; margin-bottom:10px;"/>
-      </a>
-      <br/>
-      <b>Portfolio Website</b><br/>
-      <sub>My personal portfolio showcasing projects and experience.</sub><br/>
-      🔗 <a href="https://louaykashkool-portfolio.vercel.app/">Live Site</a>
-    </td>
-    <td align="center" width="50%">
-      <a href="https://nizargold.vercel.app">
-        <img src="Screenshot 2025-09-06 175526.png"
-             alt="Gold Store App"
-             style="width:100%; height:200px; object-fit:cover;"/>
-      </a>
-      <br/>
-      <b>Gold Store Web App</b><br/>
-      <sub>A modern store platform for managing and browsing gold products.</sub><br/>
-      🔗 <a href="https://nizarjewellery.com/">Live App</a>
-    </td>
-  </tr>
-</table>
+| Project | What it is |
+|---|---|
+| [StrokeAssist](https://strokeapp.vercel.app) · [repo](https://github.com/kashkoool/strokeapp) | Accessibility PWA that lets a non-verbal stroke patient communicate with icons; works offline, used by a real client |
+| [data-engineering-assessment](https://github.com/kashkoool/data-engineering-assessment) | Python ETL pipeline into SQLite with a Power BI report |
 
----
+## Stack
 
-## Stats  
-![Louay's GitHub stats](https://github-readme-stats.vercel.app/api?username=kashkoool&show_icons=true&theme=radical&bg_color=00000000)  
+**Languages:** TypeScript, JavaScript, Python · **Backend:** NestJS, Express, Prisma · **Frontend:** Next.js, React, Tailwind
+**Cloud & DevOps:** AWS (ECS Fargate, RDS, ElastiCache, CloudFront, S3, IAM, SES), Docker, GitHub Actions, Cloudflare
+**Security:** OIDC, CSP/HSTS, HMAC-signed tokens, rate limiting, audit logging, DMARC/SPF/DKIM, SAST and container scanning
 
----
+## Contact
 
-## Links  
-- [**Portfolio**](https://louaykashkool-portfolio.vercel.app/)  
-- [**Gold Store App**](https://nizarjewellery.com/)  
-- [**Contact**](mailto:Loaekashkoool@gmail.com)  
-
-<a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">
-  <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
-</a>
-<a href="https://www.instagram.com/l.k_2910/" target="blank">
-  <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram" />
-</a>
+[Portfolio](https://louaykashkool-portfolio.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/louay-kashkool-52a45b313/) · Loaekashkoool@gmail.com

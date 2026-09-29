@@ -33,7 +33,7 @@ You can reach me via email, LinkedIn, or check out my portfolio and projects to 
   <tr>
     <td align="center" colspan="2">
       <a href="https://jadwal.qa">
-        <img src="https://skillicons.dev/icons?i=nestjs,nextjs,aws" alt="Jadwal stack"/>
+        <img src="jadwal-screenshot.png" alt="Jadwal homepage" width="100%"/>
       </a>
       <br/>
       <b>Jadwal — GCC Event-Booking Marketplace</b><br/>
@@ -44,8 +44,7 @@ You can reach me via email, LinkedIn, or check out my portfolio and projects to 
   <tr>
     <td align="center" width="50%">
       <a href="https://louaykashkool-portfolio.vercel.app/">
-        <img src="https://skillicons.dev/icons?i=threejs" alt="Portfolio Icon"
-             style="width:80px; height:80px; margin-bottom:10px;"/>
+        <img src="portfolio-screenshot.png" alt="Portfolio homepage" width="100%"/>
       </a>
       <br/>
       <b>Portfolio Website</b><br/>
@@ -55,7 +54,7 @@ You can reach me via email, LinkedIn, or check out my portfolio and projects to 
     <td align="center" width="50%">
       <a href="https://nizargold.vercel.app">
         <img src="Screenshot 2025-09-06 175526.png"
-             alt="Gold Store App"
+             alt="Gold Store App" width="100%"
              style="width:100%; height:200px; object-fit:cover;"/>
       </a>
       <br/>
@@ -69,7 +68,7 @@ You can reach me via email, LinkedIn, or check out my portfolio and projects to 
 ---
 
 ## Stats  
-![Louay's GitHub stats](https://github-readme-stats.vercel.app/api?username=kashkoool&show_icons=true&theme=radical&bg_color=00000000)  
+![Louay's GitHub streak](https://streak-stats.demolab.com?user=kashkoool&theme=radical&hide_border=true&background=00000000)  
 
 ---
 

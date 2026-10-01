@@ -63,8 +63,8 @@ You can reach me via email, LinkedIn, or check out my portfolio and projects to 
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts,js,python,nodejs,nestjs,nextjs,react,postgres,prisma,redis,mongodb,aws,docker,githubactions,cloudflare,git&theme=dark&perline=8"/>
-  <img src="https://skillicons.dev/icons?i=ts,js,python,nodejs,nestjs,nextjs,react,postgres,prisma,redis,mongodb,aws,docker,githubactions,cloudflare,git&theme=light&perline=8" alt="TypeScript, JavaScript, Python, Node.js, NestJS, Next.js, React, PostgreSQL, Prisma, Redis, MongoDB, AWS, Docker, GitHub Actions, Cloudflare, Git"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Cjs%2Cpython%2Cnodejs%2Cnestjs%2Cnextjs%2Creact%2Cpostgres%2Cprisma%2Credis%2Cmongodb%2Caws%2Cdocker%2Cgithubactions%2Ccloudflare%2Cgit&theme=dark&perline=8"/>
+  <img src="https://skillicons.dev/icons?i=ts%2Cjs%2Cpython%2Cnodejs%2Cnestjs%2Cnextjs%2Creact%2Cpostgres%2Cprisma%2Credis%2Cmongodb%2Caws%2Cdocker%2Cgithubactions%2Ccloudflare%2Cgit&theme=light&perline=8" alt="TypeScript, JavaScript, Python, Node.js, NestJS, Next.js, React, PostgreSQL, Prisma, Redis, MongoDB, AWS, Docker, GitHub Actions, Cloudflare, Git"/>
 </picture>
 
 **Also comfortable with**: SQL (Postgres), CI/CD pipelines, Networking & Security, Basic ML workflows.

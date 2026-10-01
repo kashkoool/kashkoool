@@ -268,25 +268,20 @@ def panel(w, h, r=20, beam=False):
 
 
 def build_header():
-    w, h = 880, 250
+    w, h = 880, 252
     name = "Louay Kashkool"
     name_w = measure(name, "semibold", 58)
-    roles = ["Full-Stack Software Engineer", "DevOps & Cloud Security", "Founding engineer at Jadwal"]
-    stats = [("6", "GCC countries live"), ("2,300+", "automated tests"), ("AWS", "ECS Fargate in production")]
+    roles = ["Full-Stack Software Engineer", "DevOps & Cloud Security"]
+    slot = 3  # seconds each role stays on screen
+    period = slot * len(roles)
 
     role_els = "".join(
-        f'<g class="role{" alt" if i else ""}" {delay(1.0 + i * 3)}>'
+        f'<g class="role{" alt" if i else ""}" {delay(1.0 + i * slot)}>'
         + text(72, 186, r, 22, "regular", SOFT)
         + "</g>"
         for i, r in enumerate(roles)
     )
-    stat_els = "".join(
-        f'<g class="rise" {delay(.55 + i * .12)}>'
-        + text(620, 74 + i * 62, n, 26, "semibold", TEXT)
-        + text(620, 96 + i * 62, l, 14, "mono", MUTED)
-        + "</g>"
-        for i, (n, l) in enumerate(stats)
-    )
+    share = 100 / len(roles)
     ground, _ = panel(w, h)
     body = (
         '<defs><radialGradient id="glow"><stop offset="0" stop-color="#F4C25B" stop-opacity=".2"/>'
@@ -302,8 +297,6 @@ def build_header():
         f'stroke="{GOLD}" stroke-width="3" stroke-linecap="round"/>'
         + text(44, 186, "/", 22, "regular", GOLD, cls="fade", extra=delay(.8))
         + role_els
-        + f'<line x1="584" y1="44" x2="584" y2="206" stroke="{LINE}"/>'
-        + stat_els
     )
     line_len = name_w - 20
     css = (
@@ -314,13 +307,13 @@ def build_header():
         ".glow{animation:drift 16s ease-in-out infinite alternate}"
         "@keyframes drift{to{transform:translate(-140px,60px)}}"
         ".alt{opacity:0}"
-        ".role{animation:cycle 9s ease-in-out infinite backwards}"
-        "@keyframes cycle{0%{opacity:0;transform:translateY(12px)}"
-        "5%,30%{opacity:1;transform:translateY(0)}"
-        "35%,100%{opacity:0;transform:translateY(-12px)}}"
+        f".role{{animation:cycle {period}s ease-in-out infinite backwards}}"
+        f"@keyframes cycle{{0%{{opacity:0;transform:translateY(12px)}}"
+        f"{share * .15:.1f}%,{share * .85:.1f}%{{opacity:1;transform:translateY(0)}}"
+        f"{share:.1f}%,100%{{opacity:0;transform:translateY(-12px)}}}}"
     )
     label = "Louay Kashkool. Full-Stack Software Engineer, DevOps and Cloud Security."
-    return svg(w, h, body, ["regular", "semibold", "mono"], css, label)
+    return svg(w, h, body, ["regular", "semibold"], css, label)
 
 
 # ---------------------------------------------------------------- section titles
@@ -347,7 +340,7 @@ def build_section(title, theme):
 # ---------------------------------------------------------------- project cards
 
 
-def build_featured(shot, title, role, subtitle, tags):
+def build_featured(shot, title, subtitle, tags):
     w, pad = 880, 20
     img_w = w - 2 * pad
     with Image.open(shot) as im:
@@ -357,17 +350,11 @@ def build_featured(shot, title, role, subtitle, tags):
     chips_y = ty + 22 + 26 * len(sub_lines)
     h = chips_y + 28 + 24
     ground, beam_css = panel(w, h, beam=True)
-    role_w = measure(role, "mono", 13) + 24
     body = (
         f"<defs>{SHEEN_DEFS}</defs>"
         + ground
         + screenshot(jpeg_uri(shot, 1400), pad, pad, img_w, img_h)
         + text(pad + 2, ty, title, 32, "semibold", TEXT, cls="rise", extra=f'letter-spacing="-.6" {delay(.25)}')
-        + f'<g class="rise" {delay(.3)}>'
-        f'<rect x="{w - pad - role_w:.1f}" y="{ty - 22}" width="{role_w:.1f}" height="28" rx="14" '
-        f'fill="{GOLD}" fill-opacity=".12" stroke="{GOLD}" stroke-opacity=".45"/>'
-        + text(w - pad - role_w + 12, ty - 3.5, role, 13, "mono", GOLD)
-        + "</g>"
         + "".join(
             text(pad + 2, ty + 30 + i * 26, ln, 17, "regular", MUTED, cls="rise", extra=delay(.35))
             for i, ln in enumerate(sub_lines)
@@ -474,7 +461,7 @@ def main():
             write(f"section-{slug}-{theme}.svg", build_section(title, theme))
 
     write("project-jadwal.svg", build_featured(
-        ROOT / "jadwal-screenshot.png", "Jadwal", "Founding engineer",
+        ROOT / "jadwal-screenshot.png", "Jadwal",
         "GCC event-booking marketplace, live in Qatar, KSA, UAE, Bahrain, Oman and Kuwait.",
         ["NestJS", "Next.js", "PostgreSQL", "AWS ECS Fargate", "2,300+ tests"]))
     write("project-portfolio.svg", build_card(

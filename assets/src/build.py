@@ -47,7 +47,7 @@ VENDOR_URLS = {
     "GeistMono-Regular.woff2": f"{CDN}/geist@1.7.2/dist/fonts/geist-mono/GeistMono-Regular.woff2",
     **{f"si-{n}.svg": f"{CDN}/simple-icons@13/icons/{n}.svg" for n in ("linkedin", "instagram")},
     **{f"tb-{n}.svg": f"{CDN}/@tabler/icons@3/icons/outline/{n}.svg"
-       for n in ("arrow-up-right", "world", "mail", "building-store", "calendar-event")},
+       for n in ("arrow-up-right", "chevron-down", "world", "mail", "building-store", "calendar-event")},
 }
 
 
@@ -343,24 +343,96 @@ def build_header():
 # ---------------------------------------------------------------- section titles
 
 
-def build_section(title, theme):
+def build_section(title, theme, hint=None):
+    """Section title with a drawn rule. `hint` adds a pulsing 'click' cue for <details> summaries."""
     w, h = 880, 56
     color, accent = (TEXT, RED) if theme == "dark" else (LIGHT_TEXT, LIGHT_RED)
+    muted = MUTED if theme == "dark" else "#59636E"
     tw = measure(title, "semibold", 26)
     x1 = 4 + tw + 20
-    length = w - 2 - x1
+    x2 = w - 2
+    hint_els, fonts = "", ["semibold"]
+    if hint:
+        hint_w = measure(hint, "mono", 14)
+        x2 = w - 2 - hint_w - 22 - 20
+        hint_els = (
+            text(w - 22 - hint_w - 6, 34, hint, 14, "mono", muted, cls="fade", extra=delay(.9))
+            + f'<g class="cue">{icon("tb-chevron-down", w - 20, 18, 18, accent)}</g>'
+        )
+        fonts.append("mono")
+    length = x2 - x1
     body = (
         text(2, 38, title, 26, "semibold", color, cls="rise", extra='letter-spacing="-.4"')
         + (f"<defs>{NEON_FILTER}</defs>" if theme == "dark" else "")
-        + f'<line class="rule" x1="{x1:.1f}" y1="29" x2="{w - 2}" y2="29" stroke="{accent}" '
+        + f'<line class="rule" x1="{x1:.1f}" y1="29" x2="{x2:.1f}" y2="29" stroke="{accent}" '
         f'stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"'
         + (' filter="url(#neon)"/>' if theme == "dark" else "/>")
+        + hint_els
     )
     css = (
         f".rule{{stroke-dasharray:{length:.0f};animation:draw 1.4s .2s {EASE} backwards}}"
         f"@keyframes draw{{from{{stroke-dashoffset:{length:.0f}}}}}"
+        ".cue{animation:cue 1.6s ease-in-out infinite}"
+        "@keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}"
     )
-    return svg(w, h, body, ["semibold"], css, title)
+    return svg(w, h, body, fonts, css, f"{title}. {hint}" if hint else title)
+
+
+def build_typed_text(blocks):
+    """Text card that types itself line by line behind a red caret.
+
+    blocks: list of (kind, text) with kind in {"p", "h", "li"}. Each line is hidden by
+    a background-coloured cover that steps right one character at a time; the cover's
+    resting position is fully open, so reduced-motion shows the plain text.
+    """
+    w, pad, size, lh = 880, 36, 17, 28
+    cps = 150  # characters typed per second
+    lines, y, prev = [], pad + 20 - lh, None
+    for kind, s in blocks:
+        indent = 26 if kind == "li" else 0
+        key = "semibold" if kind == "h" else "regular"
+        y += lh + (0 if prev is None else 6 if prev == kind == "li" else 14)
+        for j, ln in enumerate(wrap(s, key, size, w - 2 * pad - indent)):
+            if j:
+                y += lh
+            lines.append((pad + indent, y, ln, key, kind == "li" and j == 0))
+        prev = kind
+    h = y + pad + 2
+
+    t, out = .3, []
+    for x, ly, ln, key, bullet in lines:
+        lw = measure(ln, key, size)
+        dur = max(len(ln) / cps, .12)
+        color = TEXT if key == "semibold" else SOFT
+        if bullet:
+            out.append(
+                f'<rect class="fade" x="{pad}" y="{ly - 9}" width="10" height="3" rx="1.5" '
+                f'fill="{RED}" {delay(t)}/>'
+            )
+        out.append(text(x, ly, ln, size, key, color))
+        travel = lw + 30
+        timing = f"animation-delay:{t:.2f}s;animation-duration:{dur:.2f}s"
+        out.append(
+            f'<g class="wipe" style="transform:translateX({travel:.0f}px);{timing};'
+            f'animation-timing-function:steps({len(ln)},end)">'
+            f'<rect x="{x - 4}" y="{ly - 21}" width="{w}" height="29" fill="{BG}"/>'
+            f'<rect class="caret" x="{x - 2}" y="{ly - 18}" width="2.5" height="22" fill="{RED}" '
+            f'style="{timing}"/></g>'
+        )
+        t += dur + .05
+    body = (
+        f'<clipPath id="inner"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="19"/></clipPath>'
+        f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="20" fill="{BG}" stroke="{LINE}"/>'
+        f'<g clip-path="url(#inner)">{"".join(out)}</g>'
+    )
+    css = (
+        ".wipe{animation-name:wipe;animation-fill-mode:backwards}"
+        "@keyframes wipe{from{transform:translateX(0)}}"
+        ".caret{opacity:0;animation-name:caret;animation-timing-function:linear}"
+        "@keyframes caret{0%,96%{opacity:1}100%{opacity:0}}"
+    )
+    label = " ".join(s for _, s in blocks)
+    return svg(w, h, body, ["regular", "semibold"], css, label)
 
 
 # ---------------------------------------------------------------- project cards
@@ -481,10 +553,28 @@ def write(name, content):
 def main():
     fetch_vendor()
     write("header.svg", build_header())
-    for slug, title in [("about", "About me"), ("projects", "Projects"), ("skills", "Skill stack"),
+    for slug, title in [("projects", "Projects"), ("skills", "Skill stack"),
                         ("stats", "Stats"), ("links", "Links")]:
         for theme in ("dark", "light"):
             write(f"section-{slug}-{theme}.svg", build_section(title, theme))
+    for theme in ("dark", "light"):
+        write(f"about-summary-{theme}.svg", build_section("About me", theme, hint="Click to read"))
+    write("about-text.svg", build_typed_text([
+        ("p", "Hi there! I'm Louay Kashkool, a Full-Stack Software Engineer based in Doha, Qatar. "
+              "I build and run production web applications end to end: architecture, backend, "
+              "frontend, AWS infrastructure, CI/CD and security."),
+        ("h", "Some of my core achievements:"),
+        ("li", "Built and run jadwal.qa, a GCC event-booking marketplace live in 6 countries, "
+               "as its founding engineer"),
+        ("li", "Own its AWS production setup (ECS Fargate, RDS, CloudFront) with zero-downtime "
+               "deploys and automatic rollback"),
+        ("li", "Hardened CI/CD with OIDC-based AWS deploys and Semgrep, CodeQL, Gitleaks and Trivy "
+               "scans on every merge, backed by 2,300+ automated tests"),
+        ("li", "Root-caused and fixed a broken signature check in a payment provider's callback "
+               "that was silently failing every transaction"),
+        ("p", "You can reach me via email, LinkedIn, or check out my portfolio and projects to "
+              "learn more about my work."),
+    ]))
 
     write("project-jadwal.svg", build_featured(
         ROOT / "jadwal-screenshot.png", "Jadwal",

@@ -76,7 +76,7 @@ You can reach me via email, LinkedIn, or check out my portfolio and projects to 
   <img src="assets/section-stats-light.svg" alt="Stats" width="100%"/>
 </picture>
 
-<img src="https://streak-stats.demolab.com?user=kashkoool&background=0B0F16&border=232C3B&stroke=232C3B&ring=F4C25B&fire=F4C25B&currStreakNum=EDEFF3&sideNums=EDEFF3&currStreakLabel=F4C25B&sideLabels=939DAE&dates=939DAE&border_radius=20" alt="Louay's GitHub streak"/>
+<img src="https://streak-stats.demolab.com?user=kashkoool&background=0A0A0C&border=2A2A30&stroke=2A2A30&ring=FF2D3F&fire=FF2D3F&currStreakNum=F2F2F4&sideNums=F2F2F4&currStreakLabel=FF2D3F&sideLabels=9C9CA6&dates=9C9CA6&border_radius=20" alt="Louay's GitHub streak"/>
 
 <br/>
 

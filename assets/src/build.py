@@ -25,17 +25,17 @@ SRC = ROOT / "assets" / "src"
 VENDOR = SRC / "vendor"
 OUT = ROOT / "assets"
 
-# Palette: navy-black ground, one gold accent.
-BG = "#0B0F16"
-SURFACE = "#111722"
-LINE = "#232C3B"
-TEXT = "#EDEFF3"
-SOFT = "#C6CCD6"
-MUTED = "#939DAE"
-GOLD = "#F4C25B"
-INK = "#1A1406"
+# Palette: black ground, one neon-red accent.
+BG = "#0A0A0C"
+SURFACE = "#141417"
+LINE = "#2A2A30"
+TEXT = "#F2F2F4"
+SOFT = "#CFCFD6"
+MUTED = "#9C9CA6"
+RED = "#FF2D3F"
+INK = "#0A0A0C"
 LIGHT_TEXT = "#1F2328"
-LIGHT_GOLD = "#B7791F"
+LIGHT_RED = "#C8102E"
 
 EASE = "cubic-bezier(.16,1,.3,1)"
 
@@ -191,6 +191,15 @@ SHEEN_DEFS = (
 )
 
 
+# Neon glow. userSpaceOnUse because horizontal lines have a zero-height bbox,
+# which would make a bbox-relative filter region empty.
+NEON_FILTER = (
+    '<filter id="neon" filterUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">'
+    '<feGaussianBlur stdDeviation="3.5" result="b"/>'
+    '<feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>'
+)
+
+
 def sheen_css(travel, period=8, start=1.6):
     return (
         f".sheen{{animation:sheen {period}s {start}s ease-in-out infinite}}"
@@ -213,17 +222,17 @@ def screenshot(uri, x, y, w, h, clip_id="shot"):
     )
 
 
-def chips(items, x, y, start_delay, gold_first=False):
+def chips(items, x, y, start_delay, accent_first=False):
     out, cx = [], x
     for i, label in enumerate(items):
         w = measure(label, "mono", 13) + 24
-        gold = gold_first and i == 0
+        hot = accent_first and i == 0
         out.append(
             f'<g class="rise" {delay(start_delay + i * .07)}>'
             f'<rect x="{cx:.1f}" y="{y}" width="{w:.1f}" height="28" rx="14" '
-            f'fill="{GOLD if gold else "#fff"}" fill-opacity="{.12 if gold else .035}" '
-            f'stroke="{GOLD if gold else "#fff"}" stroke-opacity="{.45 if gold else .1}"/>'
-            + text(cx + 12, y + 18.5, label, 13, "mono", GOLD if gold else SOFT)
+            f'fill="{RED if hot else "#fff"}" fill-opacity="{.12 if hot else .035}" '
+            f'stroke="{RED if hot else "#fff"}" stroke-opacity="{.45 if hot else .1}"/>'
+            + text(cx + 12, y + 18.5, label, 13, "mono", RED if hot else SOFT)
             + "</g>"
         )
         cx += w + 8
@@ -239,7 +248,7 @@ def rounded_rect_path(x, y, w, h, r):
 
 
 def panel(w, h, r=20, beam=False):
-    """Card ground. The featured card gets a gold beam travelling its border."""
+    """Card ground. The featured card gets a red beam travelling its border."""
     out = (
         f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="{r}" fill="{BG}" stroke="{LINE}"/>'
     )
@@ -249,11 +258,12 @@ def panel(w, h, r=20, beam=False):
         d = rounded_rect_path(.5, .5, w - 1, h - 1, r)
         tail, head = 320, 110
         out += (
-            f'<path class="beamA" d="{d}" fill="none" stroke="{GOLD}" stroke-opacity=".28" '
+            f"<defs>{NEON_FILTER}</defs>"
+            f'<path class="beamA" d="{d}" fill="none" stroke="{RED}" stroke-opacity=".28" '
             f'stroke-width="1.5" stroke-dasharray="{tail} {per - tail:.1f}"/>'
-            f'<path class="beamB" d="{d}" fill="none" stroke="{GOLD}" stroke-width="1.5" '
+            f'<path class="beamB" d="{d}" fill="none" stroke="{RED}" stroke-width="1.5" '
             f'stroke-linecap="round" stroke-dasharray="{head} {per - head:.1f}" '
-            f'stroke-dashoffset="{head - tail}"/>'
+            f'stroke-dashoffset="{head - tail}" filter="url(#neon)"/>'
         )
         css = (
             f".beamA{{animation:beamA 10s linear infinite}}"
@@ -284,26 +294,40 @@ def build_header():
     share = 100 / len(roles)
     ground, _ = panel(w, h)
     body = (
-        '<defs><radialGradient id="glow"><stop offset="0" stop-color="#F4C25B" stop-opacity=".2"/>'
-        '<stop offset="1" stop-color="#F4C25B" stop-opacity="0"/></radialGradient>'
+        '<defs><radialGradient id="glow"><stop offset="0" stop-color="#FF2D3F" stop-opacity=".22"/>'
+        '<stop offset="1" stop-color="#FF2D3F" stop-opacity="0"/></radialGradient>'
         f'<clipPath id="card"><rect width="{w}" height="{h}" rx="20"/></clipPath>'
-        '<clipPath id="nameclip"><rect x="40" y="60" width="560" height="78"/></clipPath></defs>'
+        '<clipPath id="nameclip"><rect x="30" y="60" width="580" height="78"/></clipPath>'
+        + NEON_FILTER
+        + "</defs>"
         + ground
         + '<g clip-path="url(#card)"><circle class="glow" cx="760" cy="10" r="260" fill="url(#glow)"/></g>'
         + '<g clip-path="url(#nameclip)"><g class="name">'
-        + text(44, 120, name, 58, "semibold", TEXT, extra='letter-spacing="-1.2"')
+        + text(44, 120, name, 58, "semibold", RED, cls="ghost", extra='letter-spacing="-1.2"')
+        + text(44, 120, name, 58, "semibold", TEXT, cls="jitter", extra='letter-spacing="-1.2"')
         + "</g></g>"
         + f'<line class="underline" x1="46" y1="142" x2="{46 + name_w - 20:.1f}" y2="142" '
-        f'stroke="{GOLD}" stroke-width="3" stroke-linecap="round"/>'
-        + text(44, 186, "/", 22, "regular", GOLD, cls="fade", extra=delay(.8))
+        f'stroke="{RED}" stroke-width="3" stroke-linecap="round" filter="url(#neon)"/>'
+        + text(44, 186, "/", 22, "regular", RED, cls="fade", extra=f'filter="url(#neon)" {delay(.8)}')
         + role_els
     )
     line_len = name_w - 20
+    # Neon-sign glitch: every 6 s the name splits into a red ghost and the underline flickers.
+    glitch_at = "animation-delay:2.6s"
     css = (
         f".name{{animation:nameIn 1s {EASE} backwards}}"
         f"@keyframes nameIn{{from{{transform:translateY(80px)}}}}"
-        f".underline{{stroke-dasharray:{line_len:.0f};animation:draw 1.1s .45s {EASE} backwards}}"
+        f".ghost{{opacity:0;animation:ghost 6s steps(1,end) infinite;{glitch_at}}}"
+        "@keyframes ghost{0%,90%{opacity:0;transform:translate(0,0)}"
+        "91%{opacity:.85;transform:translate(-5px,0)}92.5%{opacity:.85;transform:translate(4px,-1px)}"
+        "94%{opacity:.6;transform:translate(-2px,1px)}95.5%,100%{opacity:0;transform:translate(0,0)}}"
+        f".jitter{{animation:jitter 6s steps(1,end) infinite;{glitch_at}}}"
+        "@keyframes jitter{0%,90%{transform:translate(0,0)}91%{transform:translate(2px,0)}"
+        "92.5%{transform:translate(-2px,0)}94%{transform:translate(1px,0)}95.5%,100%{transform:translate(0,0)}}"
+        f".underline{{stroke-dasharray:{line_len:.0f};"
+        f"animation:draw 1.1s .45s {EASE} backwards,flicker 6s 2.6s steps(1,end) infinite}}"
         f"@keyframes draw{{from{{stroke-dashoffset:{line_len:.0f}}}}}"
+        "@keyframes flicker{0%,90%{opacity:1}91%{opacity:.25}92.5%{opacity:1}94%{opacity:.4}95.5%,100%{opacity:1}}"
         ".glow{animation:drift 16s ease-in-out infinite alternate}"
         "@keyframes drift{to{transform:translate(-140px,60px)}}"
         ".alt{opacity:0}"
@@ -321,14 +345,16 @@ def build_header():
 
 def build_section(title, theme):
     w, h = 880, 56
-    color, accent = (TEXT, GOLD) if theme == "dark" else (LIGHT_TEXT, LIGHT_GOLD)
+    color, accent = (TEXT, RED) if theme == "dark" else (LIGHT_TEXT, LIGHT_RED)
     tw = measure(title, "semibold", 26)
     x1 = 4 + tw + 20
     length = w - 2 - x1
     body = (
         text(2, 38, title, 26, "semibold", color, cls="rise", extra='letter-spacing="-.4"')
+        + (f"<defs>{NEON_FILTER}</defs>" if theme == "dark" else "")
         + f'<line class="rule" x1="{x1:.1f}" y1="29" x2="{w - 2}" y2="29" stroke="{accent}" '
-        f'stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>'
+        f'stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"'
+        + (' filter="url(#neon)"/>' if theme == "dark" else "/>")
     )
     css = (
         f".rule{{stroke-dasharray:{length:.0f};animation:draw 1.4s .2s {EASE} backwards}}"
@@ -393,8 +419,8 @@ def build_button(label, primary):
     h = 44
     tw = measure(label, "medium", 15)
     w = round(22 + tw + 10 + 16 + 18)
-    fill, fg, stroke = (GOLD, INK, GOLD) if primary else (SURFACE, TEXT, LINE)
-    arrow = GOLD if not primary else INK
+    fill, fg, stroke = (RED, INK, RED) if primary else (SURFACE, TEXT, LINE)
+    arrow = RED if not primary else INK
     body = (
         f'<clipPath id="pill"><rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="21"/></clipPath>'
         f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="21.5" fill="{fill}" stroke="{stroke}"/>'
@@ -429,9 +455,9 @@ def build_link(label, handle, icon_name, index):
     body = (
         f'<g class="rise" {delay(.08 * index)}>'
         f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="16" fill="{BG}" stroke="{LINE}"/>'
-        f'<rect x="20" y="22" width="48" height="48" rx="12" fill="{GOLD}" fill-opacity=".1" '
-        f'stroke="{GOLD}" stroke-opacity=".3"/>'
-        + icon(icon_name, 32, 34, 24, GOLD)
+        f'<rect x="20" y="22" width="48" height="48" rx="12" fill="{RED}" fill-opacity=".1" '
+        f'stroke="{RED}" stroke-opacity=".3"/>'
+        + icon(icon_name, 32, 34, 24, RED)
         + text(84, 43, label, 17, "semibold", TEXT)
         + text(84, 66, handle, handle_size, "regular", MUTED)
         + f'<g class="arrow">{icon("tb-arrow-up-right", w - 34, 16, 16, MUTED)}</g>'

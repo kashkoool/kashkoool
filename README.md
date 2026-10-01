@@ -6,16 +6,12 @@
   <img src="assets/intro.webp" alt="Hi, I'm Louay, and it's nice to have you here" width="100%"/>
 </p>
 
-<details>
-<summary>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/about-summary-dark.svg"/>
-    <img src="assets/about-summary-light.svg" alt="About me. Click to read" width="96%"/>
-  </picture>
-</summary>
-<br/>
-<img src="assets/about-text.svg" alt="Hi there! I'm Louay Kashkool, a Full-Stack Software Engineer based in Doha, Qatar. I build and run production web applications end to end: architecture, backend, frontend, AWS infrastructure, CI/CD and security. Some of my core achievements: Built and run jadwal.qa, a GCC event-booking marketplace live in 6 countries, as its founding engineer. Own its AWS production setup (ECS Fargate, RDS, CloudFront) with zero-downtime deploys and automatic rollback. Hardened CI/CD with OIDC-based AWS deploys and Semgrep, CodeQL, Gitleaks and Trivy scans on every merge, backed by 2,300+ automated tests. Root-caused and fixed a broken signature check in a payment provider's callback that was silently failing every transaction. You can reach me via email, LinkedIn, or check out my portfolio and projects to learn more about my work." width="100%"/>
-</details>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/section-about-dark.svg"/>
+  <img src="assets/section-about-light.svg" alt="About me" width="100%"/>
+</picture>
+
+<img src="assets/about-text.svg" alt="Hi, I'm Louay, a software engineer who loves learning and evolving with technology. I enjoy creating new things and I'm always trying something new, whether it's a fresh tool or a new idea. Along the way I've delivered many projects for different businesses. You can reach me through the links below." width="100%"/>
 
 <br/>
 

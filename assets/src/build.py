@@ -47,7 +47,7 @@ VENDOR_URLS = {
     "GeistMono-Regular.woff2": f"{CDN}/geist@1.7.2/dist/fonts/geist-mono/GeistMono-Regular.woff2",
     **{f"si-{n}.svg": f"{CDN}/simple-icons@13/icons/{n}.svg" for n in ("linkedin", "instagram")},
     **{f"tb-{n}.svg": f"{CDN}/@tabler/icons@3/icons/outline/{n}.svg"
-       for n in ("arrow-up-right", "chevron-down", "world", "mail", "building-store", "calendar-event")},
+       for n in ("arrow-up-right", "world", "mail", "building-store", "calendar-event")},
 }
 
 
@@ -343,39 +343,24 @@ def build_header():
 # ---------------------------------------------------------------- section titles
 
 
-def build_section(title, theme, hint=None):
-    """Section title with a drawn rule. `hint` adds a pulsing 'click' cue for <details> summaries."""
+def build_section(title, theme):
     w, h = 880, 56
     color, accent = (TEXT, RED) if theme == "dark" else (LIGHT_TEXT, LIGHT_RED)
-    muted = MUTED if theme == "dark" else "#59636E"
     tw = measure(title, "semibold", 26)
     x1 = 4 + tw + 20
-    x2 = w - 2
-    hint_els, fonts = "", ["semibold"]
-    if hint:
-        hint_w = measure(hint, "mono", 14)
-        x2 = w - 2 - hint_w - 22 - 20
-        hint_els = (
-            text(w - 22 - hint_w - 6, 34, hint, 14, "mono", muted, cls="fade", extra=delay(.9))
-            + f'<g class="cue">{icon("tb-chevron-down", w - 20, 18, 18, accent)}</g>'
-        )
-        fonts.append("mono")
-    length = x2 - x1
+    length = w - 2 - x1
     body = (
         text(2, 38, title, 26, "semibold", color, cls="rise", extra='letter-spacing="-.4"')
         + (f"<defs>{NEON_FILTER}</defs>" if theme == "dark" else "")
-        + f'<line class="rule" x1="{x1:.1f}" y1="29" x2="{x2:.1f}" y2="29" stroke="{accent}" '
+        + f'<line class="rule" x1="{x1:.1f}" y1="29" x2="{w - 2}" y2="29" stroke="{accent}" '
         f'stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"'
         + (' filter="url(#neon)"/>' if theme == "dark" else "/>")
-        + hint_els
     )
     css = (
         f".rule{{stroke-dasharray:{length:.0f};animation:draw 1.4s .2s {EASE} backwards}}"
         f"@keyframes draw{{from{{stroke-dashoffset:{length:.0f}}}}}"
-        ".cue{animation:cue 1.6s ease-in-out infinite}"
-        "@keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}"
     )
-    return svg(w, h, body, fonts, css, f"{title}. {hint}" if hint else title)
+    return svg(w, h, body, ["semibold"], css, title)
 
 
 def build_typed_text(blocks):
@@ -553,27 +538,15 @@ def write(name, content):
 def main():
     fetch_vendor()
     write("header.svg", build_header())
-    for slug, title in [("projects", "Projects"), ("skills", "Skill stack"),
+    for slug, title in [("about", "About me"), ("projects", "Projects"), ("skills", "Skill stack"),
                         ("stats", "Stats"), ("links", "Links")]:
         for theme in ("dark", "light"):
             write(f"section-{slug}-{theme}.svg", build_section(title, theme))
-    for theme in ("dark", "light"):
-        write(f"about-summary-{theme}.svg", build_section("About me", theme, hint="Click to read"))
     write("about-text.svg", build_typed_text([
-        ("p", "Hi there! I'm Louay Kashkool, a Full-Stack Software Engineer based in Doha, Qatar. "
-              "I build and run production web applications end to end: architecture, backend, "
-              "frontend, AWS infrastructure, CI/CD and security."),
-        ("h", "Some of my core achievements:"),
-        ("li", "Built and run jadwal.qa, a GCC event-booking marketplace live in 6 countries, "
-               "as its founding engineer"),
-        ("li", "Own its AWS production setup (ECS Fargate, RDS, CloudFront) with zero-downtime "
-               "deploys and automatic rollback"),
-        ("li", "Hardened CI/CD with OIDC-based AWS deploys and Semgrep, CodeQL, Gitleaks and Trivy "
-               "scans on every merge, backed by 2,300+ automated tests"),
-        ("li", "Root-caused and fixed a broken signature check in a payment provider's callback "
-               "that was silently failing every transaction"),
-        ("p", "You can reach me via email, LinkedIn, or check out my portfolio and projects to "
-              "learn more about my work."),
+        ("p", "Hi, I'm Louay, a software engineer who loves learning and evolving with technology."),
+        ("p", "I enjoy creating new things and I'm always trying something new, whether it's a fresh "
+              "tool or a new idea. Along the way I've delivered many projects for different businesses."),
+        ("p", "You can reach me through the links below."),
     ]))
 
     write("project-jadwal.svg", build_featured(

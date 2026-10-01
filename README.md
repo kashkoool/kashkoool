@@ -1,85 +1,95 @@
-# 🚀 Louay Kashkool  
-**`Full-Stack Software Engineer | DevOps & Cloud Security`**  
-
 <p align="center">
-  <img src="0906.gif" alt="Hi, I'm Louay - welcome!" width="100%"/>
+  <img src="assets/header.svg" alt="Louay Kashkool. Full-Stack Software Engineer, DevOps and Cloud Security." width="100%"/>
 </p>
 
----
+<p align="center">
+  <img src="assets/intro.webp" alt="Hi, I'm Louay, and it's nice to have you here" width="100%"/>
+</p>
 
-## About Me  
-Hi there! I'm Louay Kashkool, a Full-Stack Software Engineer based in Doha, Qatar. I build and run production web applications end to end: architecture, backend, frontend, AWS infrastructure, CI/CD and security.  
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/section-about-dark.svg"/>
+  <img src="assets/section-about-light.svg" alt="About me" width="100%"/>
+</picture>
 
-Some of my core achievements:  
-- Built and run [jadwal.qa](https://jadwal.qa), a GCC event-booking marketplace live in 6 countries, as its founding engineer  
-- Own its AWS production setup (ECS Fargate, RDS, CloudFront) with zero-downtime deploys and automatic rollback  
-- Hardened CI/CD with OIDC-based AWS deploys and Semgrep, CodeQL, Gitleaks and Trivy scans on every merge, backed by 2,300+ automated tests  
-- Root-caused and fixed a broken signature check in a payment provider's callback that was silently failing every transaction  
+Hi there! I'm Louay Kashkool, a Full-Stack Software Engineer based in Doha, Qatar. I build and run production web applications end to end: architecture, backend, frontend, AWS infrastructure, CI/CD and security.
+
+Some of my core achievements:
+
+- Built and run [jadwal.qa](https://jadwal.qa), a GCC event-booking marketplace live in 6 countries, as its founding engineer
+- Own its AWS production setup (ECS Fargate, RDS, CloudFront) with zero-downtime deploys and automatic rollback
+- Hardened CI/CD with OIDC-based AWS deploys and Semgrep, CodeQL, Gitleaks and Trivy scans on every merge, backed by 2,300+ automated tests
+- Root-caused and fixed a broken signature check in a payment provider's callback that was silently failing every transaction
 
 You can reach me via email, LinkedIn, or check out my portfolio and projects to learn more about my work.
 
----
+<br/>
 
-## Skill Stack  
-[![My Skills](https://skillicons.dev/icons?i=ts,js,python,nodejs,nestjs,nextjs,react,postgres,prisma,redis,mongodb,aws,docker,githubactions,cloudflare,git&theme=light)](https://skillicons.dev)  
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/section-projects-dark.svg"/>
+  <img src="assets/section-projects-light.svg" alt="Projects" width="100%"/>
+</picture>
 
-**Also comfortable with**: SQL (Postgres), CI/CD pipelines, Networking & Security, Basic ML workflows.  
-
----
-
-## Projects – Showcase  
-
-<table>
-  <tr>
-    <td align="center" colspan="2">
-      <a href="https://jadwal.qa">
-        <img src="jadwal-screenshot.png" alt="Jadwal homepage" width="100%"/>
-      </a>
-      <br/>
-      <b>Jadwal — GCC Event-Booking Marketplace</b><br/>
-      <sub>Live in Qatar, KSA, UAE, Bahrain, Oman and Kuwait. NestJS · Next.js · PostgreSQL · AWS ECS Fargate · 2,300+ tests.</sub><br/>
-      🔗 <a href="https://jadwal.qa">Live Site</a> · <a href="https://github.com/jadwalit-jpg/Jadwal">Source</a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <a href="https://louaykashkool-portfolio.vercel.app/">
-        <img src="portfolio-screenshot.png" alt="Portfolio homepage" width="100%"/>
-      </a>
-      <br/>
-      <b>Portfolio Website</b><br/>
-      <sub>My personal portfolio showcasing projects and experience.</sub><br/>
-      🔗 <a href="https://louaykashkool-portfolio.vercel.app/">Live Site</a>
-    </td>
-    <td align="center" width="50%">
-      <a href="https://nizargold.vercel.app">
-        <img src="Screenshot 2025-09-06 175526.png"
-             alt="Gold Store App" width="100%"
-             style="width:100%; height:200px; object-fit:cover;"/>
-      </a>
-      <br/>
-      <b>Gold Store Web App</b><br/>
-      <sub>A modern store platform for managing and browsing gold products.</sub><br/>
-      🔗 <a href="https://nizarjewellery.com/">Live App</a>
-    </td>
-  </tr>
-</table>
-
----
-
-## Stats  
-![Louay's GitHub streak](https://streak-stats.demolab.com?user=kashkoool&theme=radical&hide_border=true&background=00000000)  
-
----
-
-## Links  
-- [**Portfolio**](https://louaykashkool-portfolio.vercel.app/)  
-- [**Gold Store App**](https://nizarjewellery.com/)  
-- [**Contact**](mailto:Loaekashkoool@gmail.com)  
-
-<a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/" target="blank">
-  <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" />
+<a href="https://jadwal.qa">
+  <img src="assets/project-jadwal.svg" alt="Jadwal: GCC event-booking marketplace, live in Qatar, KSA, UAE, Bahrain, Oman and Kuwait. NestJS, Next.js, PostgreSQL, AWS ECS Fargate, 2,300+ tests." width="100%"/>
 </a>
-<a href="https://www.instagram.com/l.k_2910/" target="blank">
-  <img src="https://skillicons.dev/icons?i=instagram" alt="Instagram" />
+<p>
+  <a href="https://jadwal.qa"><img src="assets/btn-live-site.svg" alt="Jadwal live site" height="44"/></a>
+  <a href="https://github.com/jadwalit-jpg/Jadwal"><img src="assets/btn-source.svg" alt="Jadwal source code" height="44"/></a>
+</p>
+
+<br/>
+
+<a href="https://louaykashkool-portfolio.vercel.app/">
+  <img src="assets/project-portfolio.svg" alt="Portfolio Website: my personal portfolio showcasing projects and experience. Next.js, three.js, TypeScript." width="100%"/>
 </a>
+<p>
+  <a href="https://louaykashkool-portfolio.vercel.app/"><img src="assets/btn-live-site.svg" alt="Portfolio live site" height="44"/></a>
+</p>
+
+<br/>
+
+<a href="https://nizarjewellery.com/">
+  <img src="assets/project-gold-store.svg" alt="Gold Store Web App: a modern store platform for managing and browsing gold products. React, Express, MongoDB." width="100%"/>
+</a>
+<p>
+  <a href="https://nizarjewellery.com/"><img src="assets/btn-live-app.svg" alt="Gold Store live app" height="44"/></a>
+</p>
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/section-skills-dark.svg"/>
+  <img src="assets/section-skills-light.svg" alt="Skill stack" width="100%"/>
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts,js,python,nodejs,nestjs,nextjs,react,postgres,prisma,redis,mongodb,aws,docker,githubactions,cloudflare,git&theme=dark&perline=8"/>
+  <img src="https://skillicons.dev/icons?i=ts,js,python,nodejs,nestjs,nextjs,react,postgres,prisma,redis,mongodb,aws,docker,githubactions,cloudflare,git&theme=light&perline=8" alt="TypeScript, JavaScript, Python, Node.js, NestJS, Next.js, React, PostgreSQL, Prisma, Redis, MongoDB, AWS, Docker, GitHub Actions, Cloudflare, Git"/>
+</picture>
+
+**Also comfortable with**: SQL (Postgres), CI/CD pipelines, Networking & Security, Basic ML workflows.
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/section-stats-dark.svg"/>
+  <img src="assets/section-stats-light.svg" alt="Stats" width="100%"/>
+</picture>
+
+<img src="https://streak-stats.demolab.com?user=kashkoool&background=0B0F16&border=232C3B&stroke=232C3B&ring=F4C25B&fire=F4C25B&currStreakNum=EDEFF3&sideNums=EDEFF3&currStreakLabel=F4C25B&sideLabels=939DAE&dates=939DAE&border_radius=20" alt="Louay's GitHub streak"/>
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/section-links-dark.svg"/>
+  <img src="assets/section-links-light.svg" alt="Links" width="100%"/>
+</picture>
+
+<p align="center">
+  <a href="https://louaykashkool-portfolio.vercel.app/"><img src="assets/link-portfolio.svg" alt="Portfolio" width="32%"/></a>
+  <a href="https://jadwal.qa"><img src="assets/link-jadwal.svg" alt="Jadwal" width="32%"/></a>
+  <a href="https://nizarjewellery.com/"><img src="assets/link-gold-store.svg" alt="Gold Store" width="32%"/></a>
+  <a href="mailto:Loaekashkoool@gmail.com"><img src="assets/link-email.svg" alt="Email: Loaekashkoool@gmail.com" width="32%"/></a>
+  <a href="https://www.linkedin.com/in/louay-kashkool-52a45b313/"><img src="assets/link-linkedin.svg" alt="LinkedIn" width="32%"/></a>
+  <a href="https://www.instagram.com/l.k_2910/"><img src="assets/link-instagram.svg" alt="Instagram" width="32%"/></a>
+</p>
